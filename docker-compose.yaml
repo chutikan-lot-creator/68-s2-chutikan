@@ -6,9 +6,9 @@ services:
       - "5432:5432"
 
     environment:
-      POSTGRES_PASSWORD: "123456"
-      POSTGRES_USER: "bsm"
-      POSTGRES_DB: "bsm"
+      POSTGRES_PASSWORD: "bm123456"
+      POSTGRES_USER: "bam"
+      POSTGRES_DB: "bam"
 
   admin:
     image: dpage/pgadmin4
@@ -17,8 +17,8 @@ services:
       - "8082:80"
 
     environment:
-      PGADMIN_DEFAULT_EMAIL: "bsm@admin.com"
-      PGADMIN_DEFAULT_PASSWORD: "123456"
+      PGADMIN_DEFAULT_EMAIL: "bam@admin.com"
+      PGADMIN_DEFAULT_PASSWORD: "bm123456"
 
     depends_on:
       - db
