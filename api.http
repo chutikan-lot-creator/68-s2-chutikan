@@ -1,39 +1,20 @@
-# REST
+### Variables
+@baseUrl = http://localhost:9092
 
-## Login
-POST http://localhost:9092/admin/login
+### Login
+POST {{baseUrl}}/admin/login
 Content-Type: application/json
 
 {
-    "email": "dummy@example.com",
-    "password": "dummy_password",
-    "rememberMe": false
+  "email": "{{$dotenv ADMIN_EMAIL}}",
+  "password": "{{$dotenv ADMIN_PASSWORD}}",
+  "rememberMe": true
 }
 
-###
-
-## Register
-POST http://localhost:9092/admin/register
+### Forgot Password
+POST {{baseUrl}}/admin/forgot-password
 Content-Type: application/json
 
 {
-    "email": "new@example.com",
-    "password": "dummy_password",
-    "name": "Dummy User"
+  "email": "{{$dotenv ADMIN_EMAIL}}"
 }
-
-###
-
-## Forgot Password
-POST http://localhost:9092/admin/forgot-password
-Content-Type: application/json
-
-{
-    "email": "dummy@example.com"
-}
-
-###
-
-## Profile
-GET http://localhost:9092/admin/profile
-Authorization: Bearer dummy_token_here
