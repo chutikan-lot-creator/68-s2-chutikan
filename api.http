@@ -18,3 +18,92 @@ Content-Type: application/json
 {
   "email": "{{$dotenv ADMIN_EMAIL}}"
 }
+### Variables
+@baseUrl = http://localhost:9092
+
+### 3.1 Student
+### 3.1.1 Create Student
+POST {{baseUrl}}/api/students
+Content-Type: application/json
+
+{
+  "data": {
+    "NAME": "Somchai Jaidee",
+    "MOBILE": "0812345678",
+    "CARDID": "1100100200300",
+    "STATE": "active"
+  }
+}
+
+### 3.1.2 List All Students
+GET {{baseUrl}}/api/students
+
+### 3.1.3 List Student with ID
+GET {{baseUrl}}/api/students/1
+
+### 3.1.4 Update Student
+PUT {{baseUrl}}/api/students/1
+Content-Type: application/json
+
+{
+  "data": {
+    "NAME": "Somchai Updated"
+  }
+}
+
+
+### 3.2 Subject
+### 3.2.1 Create Subject
+POST {{baseUrl}}/api/subjects
+Content-Type: application/json
+
+{
+  "data": {
+    "NAME": "Computer Science",
+    "STATE": "active"
+  }
+}
+
+### 3.2.2 List All Subjects
+GET {{baseUrl}}/api/subjects
+
+### 3.2.3 List Subject with ID
+GET {{baseUrl}}/api/subjects/1
+
+### 3.2.4 Update Subject
+PUT {{baseUrl}}/api/subjects/1
+Content-Type: application/json
+
+{
+  "data": {
+    "NAME": "Advanced Computer Science"
+  }
+}
+
+
+### 3.3 Teacher
+### 3.3.1 Create Teacher
+POST {{baseUrl}}/api/teachers
+Content-Type: application/json
+
+{
+  "data": {
+    "NAME": "Dr. Smith"
+  }
+}
+
+### 3.3.2 List All Teachers
+GET {{baseUrl}}/api/teachers
+
+### 3.3.3 List Teacher with ID
+GET {{baseUrl}}/api/teachers/1
+
+### 3.3.4 Update Teacher
+PUT {{baseUrl}}/api/teachers/1
+Content-Type: application/json
+
+{
+  "data": {
+    "NAME": "Prof. Smith"
+  }
+}
